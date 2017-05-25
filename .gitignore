@@ -3,6 +3,9 @@
 /[Oo]bj/
 /[Bb]uild/
 /[Bb]uilds/
+/[Tt]emp/
+/[Ll]ua[Ff]ramework/
+/[Oo]bj/
 /Assets/[Ss]treamingAssets
 /Assets/AssetStoreTools*
 
