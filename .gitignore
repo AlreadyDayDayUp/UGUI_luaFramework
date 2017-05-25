@@ -8,7 +8,7 @@
 /[Oo]bj/
 /Assets/[Ss]treamingAssets
 /Assets/AssetStoreTools*
-
+/Assets/LuaFramework/ToLua/Source/Generate/
 # Visual Studio 2015 cache directory
 /.vs/
 
