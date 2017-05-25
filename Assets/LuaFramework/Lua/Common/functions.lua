@@ -27,11 +27,6 @@ function newObject(prefab)
 	return GameObject.Instantiate(prefab);
 end
 
---创建面板--
-function createPanel(name)
-	PanelManager:CreatePanel(name);
-end
-
 function child(str)
 	return transform:FindChild(str);
 end
