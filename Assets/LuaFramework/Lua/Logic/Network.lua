@@ -2,6 +2,9 @@
 require "Common/define"
 require "Common/protocal"
 require "Common/functions"
+require "Common/Class"
+require "Common/UtilLua"
+
 Event = require 'events'
 
 require "3rd/pblua/login_pb"
