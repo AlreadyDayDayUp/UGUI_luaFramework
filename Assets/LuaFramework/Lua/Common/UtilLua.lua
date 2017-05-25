@@ -45,3 +45,19 @@ function look(...)
     str = str .. "\n" .. msg
     log(str)
 end
+
+-- 判断一个元素e是否是空或者null
+function isnull(e)
+    if e == nil then
+        return true
+    end
+    local t = type(e)
+    if t == "userdata" or t == "lightuserdata" then
+        return tolua.isnull(e)
+    end
+
+    return false
+end
+
+
+

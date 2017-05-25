@@ -10,23 +10,45 @@ local function createPanel(name, func)
 	PanelManager:CreatePanel(name, func);
 end
 
-local function closePanel(name)
-	PanelManager:ClosePanel(name)
+function ControllerManager.Create(name, ...)
+	local ctrl = ctrlList[name]
+	if ctrl then 
+		return ctrl
+	end
+
+	ctrl = assert(ControllerFactory.CreateCtrl(name)).New(name)
+	ctrlList[name] = ctrl
+	local tempfunc = function(obj)
+		ctrl:OnPanelLoaded(obj)
+		ctrl:Enable(...)
+	end
+	createPanel(name, tempfunc)
+	return ctrl
 end
 
 function ControllerManager.Show(name, ...)
-	local ctrl = assert(ControllerFactory.CreateCtrl(name))
-	local tempfunc = nil
-	if ctrl.init  and type(ctrl.init) == "function" then
-		tempfunc = function()
-			ctrl.init(...)
-		end
+	local ctrl = ctrlList[name]
+	if ctrl then 
+		ctrl:Enable(...)
 	else
-		logWarn(name .. "Ctrl has no Init Function, or it is not a function")
+		logError("Can't find controller named : " .. name )
 	end
-	createPanel(name, tempfunc)
 end
 
-function ControllerManager.Close(name)
-	closePanel(name)
+function ControllerManager.Hide(name)
+	local ctrl = ctrlList[name]
+	if ctrl then 
+		ctrl:Disable()
+	else
+		logError("Can't find controller named : " .. name )
+	end
+end
+
+function ControllerManager.Destroy(name)
+	local ctrl = ctrlList[name]
+	if ctrl then 
+		ctrl:Destroy()
+	else
+		logError("Can't find controller named : " .. name )
+	end
 end
