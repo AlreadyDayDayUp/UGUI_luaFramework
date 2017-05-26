@@ -22,3 +22,8 @@ networkMgr = LuaHelper.GetNetManager();
 
 WWW = UnityEngine.WWW;
 GameObject = UnityEngine.GameObject;
+
+--type
+textType = typeof("Text")
+imgType = typeof("Image")
+scrollViewType = typeof("Scroll View")

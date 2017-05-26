@@ -10,21 +10,21 @@ namespace LuaFramework {
         private string data = null;
         private Dictionary<string, LuaFunction> buttons = new Dictionary<string, LuaFunction>();
 
-        protected void Awake() {
-            Util.CallMethod(name, "Awake", gameObject);
-        }
+        //protected void Awake() {
+        //    Util.CallMethod(name, "Awake", gameObject);
+        //}
 
-        protected void Start() {
-            Util.CallMethod(name, "Start");
-        }
+        //protected void Start() {
+        //    Util.CallMethod(name, "Start");
+        //}
 
-        protected void OnClick() {
-            Util.CallMethod(name, "OnClick");
-        }
+        //protected void OnClick() {
+        //    Util.CallMethod(name, "OnClick");
+        //}
 
-        protected void OnClickEvent(GameObject go) {
-            Util.CallMethod(name, "OnClick", go);
-        }
+        //protected void OnClickEvent(GameObject go) {
+        //    Util.CallMethod(name, "OnClick", go);
+        //}
 
         /// <summary>
         /// 添加单击事件
